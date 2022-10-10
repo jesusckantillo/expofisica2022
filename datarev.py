@@ -51,6 +51,7 @@ def vec(txt):
   y = []
   x = []
   xder=[]
+  xrounder=[]
   for i in range(len(data)):
    for j in range(2):
     if j == 0:
@@ -61,6 +62,10 @@ def vec(txt):
   xder = diff(y)/diff(x)
   print(xder)
   del x[-1]
+  for element in xder:
+      d = round(element)
+      xrounder.append(d)
+  xder = xrounder
   plt.plot(x,xder)
   plt.title("Grafica de velocidad VS tiempo")
   plt.xlabel("Tiempo(s)")
